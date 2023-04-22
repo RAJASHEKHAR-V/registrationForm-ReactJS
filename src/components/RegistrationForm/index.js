@@ -13,27 +13,35 @@ class RegistrationForm extends Component {
 
   onSubmitted = event => {
     event.preventDefault()
-    const {firstName, lastName} = this.state
-
+    const {firstName, lastName, isSubmittedSuccessful} = this.state
+    console.log(firstName, lastName)
     if (firstName === '' && lastName !== '') {
-      this.setState(prevState => ({isFirstBlank: !prevState.isFirstBlank}))
+      console.log('first-name')
+      this.setState({isFirstBlank: true})
     } else if (firstName !== '' && lastName === '') {
-      this.setState(prevState => ({isSecondBlank: !prevState.isSecondBlank}))
+      this.setState({isSecondBlank: true})
     } else if (firstName !== '' && lastName !== '') {
       this.setState(prevState => ({
         isSubmittedSuccessful: !prevState.isSubmittedSuccessful,
+        firstName: '',
+        lastName: '',
       }))
+    } else if (firstName === '' && lastName === '' && !isSubmittedSuccessful) {
+      this.setState({
+        isFirstBlank: true,
+        isSecondBlank: true,
+      })
     } else {
       this.setState(prevState => ({
-        isFirstBlank: !prevState.isFirstBlank,
-        isSecondBlank: !prevState.isSecondBlank,
+        isSubmittedSuccessful: !prevState.isSubmittedSuccessful,
       }))
     }
   }
 
   onBlurredFirstName = event => {
+    console.log(event.target.value)
     if (event.target.value === '') {
-      this.setState(prevState => ({isFirstBlank: !prevState.isFirstBlank}))
+      this.setState({firstName: '', isFirstBlank: true})
       return
     }
     this.setState({firstName: event.target.value, isFirstBlank: false})
@@ -41,7 +49,7 @@ class RegistrationForm extends Component {
 
   onBlurredLastName = event => {
     if (event.target.value === '') {
-      this.setState(prevState => ({isSecondBlank: !prevState.isSecondBlank}))
+      this.setState({lastName: '', isSecondBlank: true})
       return
     }
     this.setState({lastName: event.target.value, isSecondBlank: false})

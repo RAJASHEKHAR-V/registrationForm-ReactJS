@@ -16,6 +16,7 @@
 
 .form-el {
   width: 50%;
+  height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,8 +40,8 @@
   font-weight: 400;
   border: 1px solid #cbd2d9;
   border-radius: 5px;
-  /* margin-bottom: 15px; */
   padding-left: 10px;
+  outline: none;
 }
 
 .required {
@@ -48,7 +49,7 @@
   font-family: 'Roboto';
   color: #ff0b37;
   font-weight: 400;
-  margin: auto;
+  margin: 0px;
 }
 
 .last-name {
@@ -68,6 +69,7 @@
   border: 1px solid #cbd2d9;
   border-radius: 5px;
   padding-left: 10px;
+  outline: none;
 }
 
 .blurred {
@@ -75,8 +77,19 @@
   border: 1px solid #ff0b37;
 }
 
+.success-icon {
+  width: 12%;
+  height: 22%;
+}
+
+.success-para {
+  font-family: 'Roboto';
+  color: #475569;
+  font-weight: 500;
+}
+
 .button-card {
-  width: 70%;
+  width: 20%;
   margin-bottom: 15px;
   margin-top: 15px;
 }
@@ -89,4 +102,91 @@
   background-color: #ea580c;
   border: none;
   border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+@media (max-width: 767px) {
+  .registration-heading {
+    font-size: 35px;
+  }
+
+  .form-el {
+    width: 80%;
+  }
+
+  .first-name {
+    font-size: 14px;
+  }
+
+  .first-name-input {
+    font-size: 14px;
+  }
+
+  .required {
+    font-size: 12px;
+  }
+
+  .last-name {
+    font-size: 14px;
+  }
+
+  .last-name-input {
+    font-size: 14px;
+  }
+
+  .success-icon {
+    width: 25%;
+    height: 25%;
+  }
+
+  .success-para {
+    font-size: 20px;
+  }
+
+  .button-card {
+    width: 70%;
+  }
+  .button {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 768px) {
+  .registration-heading {
+    font-size: 45px;
+  }
+
+  .first-name {
+    font-size: 15px;
+  }
+
+  .first-name-input {
+    font-size: 15px;
+  }
+
+  .required {
+    font-size: 12px;
+  }
+
+  .last-name {
+    font-size: 15px;
+  }
+
+  .last-name-input {
+    font-size: 15px;
+  }
+
+  .success-icon {
+    width: 25%;
+    height: 25%;
+  }
+
+  .success-para {
+    font-size: 25px;
+  }
+
+  .button {
+    font-size: 15px;
+  }
 }
