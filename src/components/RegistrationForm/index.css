@@ -177,15 +177,13 @@
     font-size: 15px;
   }
 
-  .success-icon {
-    width: 25%;
-    height: 25%;
-  }
-
   .success-para {
     font-size: 25px;
   }
 
+  .add-response {
+    width: 70%;
+  }
   .button {
     font-size: 15px;
   }

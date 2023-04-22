@@ -96,18 +96,13 @@ class RegistrationForm extends Component {
   )
 
   render() {
-    const {
-      lastName,
-      isFirstBlank,
-      isSecondBlank,
-      isSubmittedSuccessful,
-    } = this.state
+    const {isFirstBlank, isSecondBlank, isSubmittedSuccessful} = this.state
     const addButton = isSubmittedSuccessful
       ? 'Submit Another Response'
       : 'Submit'
     const addFirstBlur = isFirstBlank ? 'blurred' : ''
     const addLastBlur = isSecondBlank ? 'blurred' : ''
-    console.log(lastName)
+    const addBtnClass = isSubmittedSuccessful ? 'add-response' : ''
 
     return (
       <div className="bg-container">
@@ -121,7 +116,7 @@ class RegistrationForm extends Component {
                 addFirstBlur,
                 addLastBlur,
               )}
-          <div className="button-card">
+          <div className={`button-card ${addBtnClass}`}>
             <button type="submit" className="button">
               {addButton}
             </button>
